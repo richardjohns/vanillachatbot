@@ -8,9 +8,24 @@ const rl = Readline.createInterface({
     terminal: false
 })
 
+const matcher = require('./matcher')
+
 rl.setPrompt('> ')
 rl.prompt()
 rl.on('line', reply => {
-    console.log(`You said ${reply}`)
-    rl.prompt()
+    matcher(reply, data => {
+        switch(data.intent) {
+            case 'Hello':
+                console.log("A big hello from Vanilla!")
+                rl.prompt()
+                break
+            case 'Exit':
+                console.log("Bye and have a great day!")
+                process.exit(0)
+            default: {
+                console.log("I don't understand")
+                rl.prompt()
+            }
+        }
+    })
 })
