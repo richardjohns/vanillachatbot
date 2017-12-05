@@ -9,6 +9,8 @@ const rl = Readline.createInterface({
 })
 
 const matcher = require('./matcher')
+const weather = require('./weather')
+const {currentWeather} = require('./parser')
 
 rl.setPrompt('> ')
 rl.prompt()
@@ -21,6 +23,16 @@ rl.on('line', reply => {
             break;
           case "CurrentWeather":
             console.log(`Checking weather for ${data.entities.city}`);
+            weather(data.entities.city, 'current')
+                .then(response => {
+                    let parseResult = currentWeather(response)
+                    console.log(parseResult)
+                    rl.prompt();
+                })
+                .catch(error => {
+                    console.log("We have a problem Houston: ", error)
+                    rl.prompt();
+                })
             rl.prompt();
             break;
           case "Exit":
