@@ -23,17 +23,31 @@ rl.on('line', reply => {
             break;
           case "CurrentWeather":
             console.log(`Checking weather for ${data.entities.city}`);
-            weather(data.entities.city, 'current')
-                .then(response => {
-                    let parseResult = currentWeather(response)
-                    console.log(parseResult)
-                    rl.prompt();
-                })
-                .catch(error => {
-                    console.log("We have a problem Houston: ", error)
-                    rl.prompt();
-                })
+            weather(data.entities.city, "current")
+              .then(response => {
+                let parseResult = currentWeather(response);
+                console.log(parseResult);
+                rl.prompt();
+              })
+              .catch(error => {
+                console.log("We have a problem Houston: ", error);
+                rl.prompt();
+              });
             rl.prompt();
+            break;
+          case "WeatherForecast":
+            console.log("Let me check...");
+            // get weather data from an API
+            weather(data.entities.city)
+              .then(response => {
+                let parseResult = forecastWeather(response, data.entities);
+                console.log(parseResult);
+                rl.prompt();
+              })
+              .catch(error => {
+                console.log("There seems to be a problem connecting to the Weather service!");
+                rl.prompt();
+              });
             break;
           case "Exit":
             console.log("Bye and have a great day!");
