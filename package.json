@@ -1,0 +1,27 @@
+{
+  "name": "vanilla",
+  "version": "1.0.0",
+  "description": "A rule-based weather bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richardjohns/vanillachatbot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/richardjohns/vanillachatbot/issues"
+  },
+  "homepage": "https://github.com/richardjohns/vanillachatbot#readme",
+  "dependencies": {
+    "nodemon": "^1.12.1",
+    "xregexp": "^3.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
