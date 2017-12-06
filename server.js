@@ -12,6 +12,10 @@ const PORT = process.env.PORT || 3000
 // Tokens
 const config = require('./config')
 
+//FBeamer
+const FBeamer = require('./fbeamer')
+const f = new FBeamer(config)
+
 // Test
 server.get('/', (req, res, next) => {
     res.send("Hello")
