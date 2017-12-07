@@ -4,7 +4,9 @@
   "description": "A rule-based weather bot",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "ngrok": "ngrok http 3000"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
   "dependencies": {
     "colors": "^1.1.2",
     "moment": "^2.19.3",
+    "ngrok": "^2.2.24",
     "nodemon": "^1.12.1",
     "restify": "^6.3.4",
     "xregexp": "^3.2.0",
