@@ -38,7 +38,7 @@ server.post("/", (req, res, next) => {
     // f.txt(msg.sender, `Hey, you just said ${msg.message.text}`);
     // f.img(msg.sender, "http://www.stickees.com/files/food/sweet/3543-icecream-cone-sticker.png");
     if (msg.message.text) {
-      // If a text message is received
+      // If a text message is received... at the moment the bot only understands text.
       matcher(msg.message.text, data => {
         switch (data.intent) {
           case "Hello":

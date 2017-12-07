@@ -33,6 +33,7 @@ class FBeamer {
     }
   }
 
+  // resubscribes to fb page after server restarts
   subscribe() {
     request(
       {
