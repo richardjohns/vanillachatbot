@@ -2,11 +2,11 @@
   "name": "vanilla",
   "version": "1.0.0",
   "description": "A rule-based weather bot",
-  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
-    "ngrok": "ngrok http 3000"
+    "ngrok": "ngrok http 3000",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -14,6 +14,9 @@
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "6.2.1"
+  },
   "bugs": {
     "url": "https://github.com/richardjohns/vanillachatbot/issues"
   },

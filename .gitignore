@@ -1,4 +1,7 @@
-#Bundle
+# Ignore configuration & keys
+config/development.json
+
+# Bundle
 bundle*
 
 # Logs
